@@ -3,32 +3,38 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args){
 
-        // This is a Shopping Cart Program
+        // WEIGHT CONVERSION PROGRAM
+
 
         Scanner scanner = new Scanner(System.in);
 
-        String item;
-        double price;
-        int quantity;
-        char currency = '$';
-        double total;
+        double weight;
+        double newWeight;
+        int choice;
 
-        System.out.print("What item would you want to purchase?: ");
-        item = scanner.nextLine();
+        System.out.println("Weight Conversion Program");
+        System.out.println("1: Convert gram to kgs");
+        System.out.println("2: Convert kgs to gram");
 
-        System.out.println("What is the price for each?: ");
-        price = scanner.nextDouble();
+        System.out.println("Choose an option: ");
+        choice = scanner.nextInt();
 
-        System.out.println("How many would you like?: ");
-        quantity = scanner.nextInt();
+        if (choice == 1){
+            System.out.println("Enter the weight in gram: ");
+            weight = scanner.nextDouble();
+            newWeight = weight * 0.001;
+            System.out.println("The new weight in kgs is: " + newWeight + "Kg");
+        }
+        else if (choice == 2) {
+            System.out.println("Enter the weight in kgs: ");
+            weight = scanner.nextDouble();
+            newWeight = weight * 1000;
+            System.out.println("The new weight in gram is: " + newWeight + "gram");
 
-        total = price * quantity;
-
-        System.out.println("\nYou have bought " + quantity + " " + item +"s");
-        System.out.println("Your total is " + currency + total);
-
-
-
+        }
+        else{
+            System.out.println("That was not a valid choice!");
+        }
 
 
         scanner.close();
